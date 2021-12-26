@@ -4,13 +4,47 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+  <style>
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    li {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 50px;
+      justify-content: space-between;
+    }
+
+    li img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50px;   
+    }
+
+    li span {
+      width: 30%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  </style>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+
+    <ul id="streamers">
+    </ul>
+
   </body>
 </html>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="javascripts/axios.js" type="module">
+<script src="javascripts/axios.js">
   
 </script>
