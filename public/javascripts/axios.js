@@ -1,4 +1,3 @@
-
 const fetchChannels = async (type) => {
   try {
     const channels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
@@ -96,11 +95,42 @@ window.addEventListener('load', async () => {
   console.log("🚀 ~ file: axios.js ~ line 23 ~ window.addEventListener ~ streamers", channels);
 
   const streamers = document.querySelector('#streamers');
+  const onlBtn = document.querySelector('#Onlbtn')
+  const offBtn = document.querySelector('#Offbtn')
+  const allBtn = document.querySelector('#Allbtn')
 
   renderOnlineChannels(streamers, onlineChannels);
   renderOfflineChannels(streamers, offlineChannels);
 
+  
+  onlBtn.addEventListener('click', () => {
+    while (streamers.firstChild) {
+      streamers.removeChild(streamers.lastChild);
+    }
+    renderOnlineChannels(streamers, onlineChannels);
+  })
+
+  offBtn.addEventListener('click', () => {
+    while (streamers.firstChild) {
+      streamers.removeChild(streamers.lastChild);
+    }
+    renderOfflineChannels(streamers, offlineChannels);
+  })
+
+  allBtn.addEventListener('click', () => {
+    while (streamers.firstChild) {
+      streamers.removeChild(streamers.lastChild);
+    }
+    renderOnlineChannels(streamers, onlineChannels);
+    renderOfflineChannels(streamers, offlineChannels);
+  })
+
+
+
+
+
 })
+
 
 
 
